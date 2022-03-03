@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="header">
+        <div class="title">
+            <p class="mainP">TODO</p>
+        </div>
+        <div class="time">
+            <p>{{today | date:'fullDate'}}</p>
+            <p>{{today | date:'h:mm a '}}</p>
+        </div>
+    </div>
+    <div class="input">
+        <input type="text" placeholder="Create a todo." #todoInput>
+        <input type="time" name="time" id="time" #time>
+        <button 
+        class="add"
+        (click)="addTodo(todoInput.value,time.value)"
+        >Add</button>
+    </div>
+</div>
+<div class="container-output">
+    <app-output
+    [TodoArray]="todoArray"></app-output>
+</div>

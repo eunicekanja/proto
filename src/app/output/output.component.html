@@ -1,0 +1,19 @@
+<div class="todo-output">
+    <div class="todo-items">
+        <div class="todo-item" *ngFor="let item of TodoArray; let i=index" isComplete [ngClass]="{'Iscomplete':item[2]===true}">
+            <div class="complete">
+               <button (click)="complete(i)">Complete</button>
+            </div>
+            <div class="content">
+                <p class="primaryP">{{item[0]}}</p>
+                <p class="primaryP">{{item[1]}}</p>
+            </div>
+            <div class="delete">
+                <button (click)="deleteItem(i)">Delete</button>
+            </div>
+        </div>
+    </div>
+    <div class="items-left" *ngIf="TodoArray.length>0">
+        <p>Items left {{TodoArray.length}}</p>
+    </div>
+</div>
